@@ -1,24 +1,13 @@
-# README
+# PPO -Planning Poker Online-
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 概要
 
-Things you may want to cover:
+PPO -Planning Poker Online- は StartupTechnology社 の福嶋氏によって開発された、世界最高レベルの戦略トレーディングカードゲームです。 さあ、君も今すぐアカウント登録して、アジャイル開発の見積もりの世界に参加しよう！
 
-* Ruby version
+## ルール説明
 
-* System dependencies
+プランニングポーカーとは、「1、2、3、5・・・」といった数字が書かれたカードを使って、タスクの規模を相対的に見積もる手法です。やり方はとても簡単。まず、作業を行うメンバーを集め、それぞれにカードを配ります。その後、それぞれのタスクに対して開発を担当するメンバーが思いのままに数字のカードを出し合います。
 
-* Configuration
+　ポイントは、メンバーがそれぞれ提示したポイントについてお互いに根拠を述べ合うところにあります。「テストデータの作成に時間が掛かる」「テンプレートを使えば簡単」など、各メンバーの考えをシェアすることで、一人で考えている時には漏れていたかもしれない工夫や懸念材料を洗い出すことができます。ひととおりディスカッションを終えたら、再度カードを出し合います。このサイクルを2、3回繰り返すことで、全員がある程度、納得できる見積もりを出すことができるようになるという仕組みです。
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+　カードに書かれた数字は通常、ポイントと表現されます。これは、あくまで各タスクを相対的に評価するための目安で、単位自体に「工数」「難易度」など特定の意味が結びついているわけではありません。例えば、日数で計算したい場合は「終わらせるのに理想と考えている日数」として数値を使うこともできます。

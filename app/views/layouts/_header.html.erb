@@ -3,7 +3,6 @@
     <%= link_to "Planning Poker Online", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "ホーム", root_path %></li>
         <li><%= link_to "ヘルプ", '/help' %></li>
         <% if logged_in? %>
           <li><%= link_to "ユーザー一覧", users_path %></li>

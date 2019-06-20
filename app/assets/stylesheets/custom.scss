@@ -68,14 +68,20 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 2.1em;
+  line-height: 56px;
   color: #fff;
   letter-spacing: -1px;
-  padding-top: 16px;
+  // padding-top: 16px;
   font-weight: bold;
   &:hover {
     color: white;
     text-decoration: none;
   }
+}
+
+.dropdown-toggle {
+  font-size: 2em;
+  color: #fff !important;
 }
 
 

@@ -7,6 +7,8 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       log_in user
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
+      # Websocketサーバーからアクセスするため、Cookieにcurrent_userを保存。
+      cookies.encrypted[:user_id] = user.id
       redirect_back_or user
     else
       flash.now[:danger] = 'メールアドレスかパスワードが違うみたいだぞ'

@@ -1,0 +1,9 @@
+<% provide(:title, @room.name) %>
+<div class="row">
+  <h1><%= @room.name %></h1>
+  <div id="messages", data-room_id="<%= @room.id %>">
+    <%= render @messages %>
+  </div>
+  <%= label nil, nil, '発言する:' %>
+  <%= text_field nil, nil, 'data-behavior': 'room_speaker' %>
+</div>

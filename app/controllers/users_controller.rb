@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       @user = current_user
     end
     @micropost = current_user.microposts.build if logged_in?
-    @microposts = @user.microposts.paginate(page: params[:page])
+    @microposts = @user.microposts.order(created_at: :desc).paginate(page: params[:page])
   end
 
   # GET /users/new

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :rooms, only: %i[show index]
+
   get 'sessions/new'
   resources :users
   resources :microposts, only: [:create, :destroy]

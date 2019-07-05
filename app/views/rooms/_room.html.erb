@@ -1,4 +1,5 @@
 <div class="room">
   <%= gravatar_for(room.created_user, size: 50) %>
   <p class="room_name"><%= link_to room.name, room_path(room) %><p>
+  <p class="room_about"><%= room.about %></p>
 </div>

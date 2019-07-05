@@ -1,9 +1,13 @@
+document.addEventListener 'turbolinks:request-start', ->
+  App.room.disconnected()
+
 document.addEventListener 'turbolinks:load', ->
   App.room = App.cable.subscriptions.create { channel: "RoomChannel", room_id: $('#messages').data('room_id') },
     connected: ->
 
     disconnected: ->
-
+      this.perform('unsubscribed')
+      
     received: (data) ->
       $('#messages').append data['message']
 

@@ -1,6 +1,7 @@
 <% provide(:title, '見積もり部屋') %>
 <div class="row">
   <h1>見積もり部屋</h1>
+  <%= link_to "部屋を作成", new_room_path, class: "btn btn-lg btn-primary btn-new-room" %>
   <div id="rooms">
     <%= render @rooms %>
   </div>

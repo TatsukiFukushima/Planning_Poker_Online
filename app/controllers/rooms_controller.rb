@@ -1,4 +1,5 @@
 class RoomsController < ApplicationController
+  before_action :correct_user, only: :destroy
 
   def new
     @room = Room.new
@@ -10,7 +11,7 @@ class RoomsController < ApplicationController
   end
 
   def index
-    @rooms = Room.all.order(:id)
+    @rooms = Room.all.includes(:created_user).order(created_at: :desc)
   end
 
   def create
@@ -24,9 +25,20 @@ class RoomsController < ApplicationController
     end
   end
 
+  def destroy
+    @room.destroy
+    flash[:success] = "部屋が削除されたぞ"
+    redirect_to request.referrer || rooms_url
+  end
+
   private
     def room_params
       params.require(:room).permit(:name, :about)
+    end
+
+    def correct_user
+      @room = current_user.rooms.find_by(id: params[:id])
+      redirect_to rooms_url if @room.nil?
     end
 
 end

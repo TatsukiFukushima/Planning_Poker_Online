@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :rooms, only: %i[show index]
+  resources :rooms # , only: %i[new show index edit destroy]
 
   get 'sessions/new'
   resources :users

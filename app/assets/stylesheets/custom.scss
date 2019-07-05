@@ -43,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 3em;
   letter-spacing: -2px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -205,6 +205,11 @@ input {
   color: white !important;
 }
 
+.btn-new-room {
+  float: right;
+  margin-top: -60px;
+}
+
 .checkbox {
   margin-top: -10px;
   margin-bottom: 10px;
@@ -300,6 +305,6 @@ span.picture {
   height: 70px;
   .room_name {
     font-size: 2em;
-    margin-top: 15px;
+    margin-top: 5px;
   }
 }

@@ -3,6 +3,7 @@
   <p class="room_name"><%= link_to room.name, room_path(room) %><p>
   <span class="room_about"><%= room.about %></span>
   <% if current_user?(room.created_user) %>
-    <%= link_to "削除", room, method: :delete, class: "delete delete_room", data: {confirm: "部屋を削除するぞ。"} %>
+    <%= link_to "削除", room, method: :delete, class: "room_menu delete_room", data: {confirm: "部屋を削除するぞ。"} %>
+    <%= link_to "編集", edit_room_path(room.id), class: "room_menu edit_room" %>
   <% end %>
 </div>

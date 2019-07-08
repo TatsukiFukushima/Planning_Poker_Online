@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-  resources :rooms # , only: %i[new show index edit destroy]
-
-  get 'sessions/new'
   resources :users
+  resources :rooms
   resources :microposts, only: [:create, :destroy]
 
   # ログインしている時のパス
@@ -11,6 +9,8 @@ Rails.application.routes.draw do
   end
   # してない時
   root to: 'home#index'
+  
+  get 'sessions/new'
   get '/contact' => 'home#contact'
   get '/help' => 'home#help'
   get '/about' => 'home#about'

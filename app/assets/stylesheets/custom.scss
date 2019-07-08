@@ -26,10 +26,6 @@ textarea {
   resize: vertical;
 }
 
-.container {
-  // width: 70%;
-}
-
 .center {
   text-align: center;
   h1 {
@@ -75,11 +71,11 @@ p {
   line-height: 56px;
   color: #fff;
   letter-spacing: -1px;
-  // padding-top: 16px;
   font-weight: bold;
   &:hover {
-    color: white;
+    color: #ddd;
     text-decoration: none;
+    background-color: #000;
   }
 }
 
@@ -313,8 +309,9 @@ span.picture {
     margin-top: 5px;
   }
 
-  .delete_room {
+  .room_menu {
     float: right;
     display: inline;
+    margin-left: 20px;
   }
 }

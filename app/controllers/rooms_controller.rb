@@ -1,5 +1,5 @@
 class RoomsController < ApplicationController
-  before_action :correct_user, only: :destroy
+  before_action :correct_user, only: [:edit, :destroy]
 
   def new
     @room = Room.new
@@ -12,6 +12,20 @@ class RoomsController < ApplicationController
 
   def index
     @rooms = Room.all.includes(:created_user).order(created_at: :desc)
+  end
+
+  def edit
+    @room = Room.find(params[:id])
+  end
+
+  def update
+    @room = Room.find(params[:id])
+    if @room.update_attributes(room_params)
+      flash[:success] = "部屋情報が変更されたぞ"
+      redirect_to rooms_url
+    else
+      render 'edit'
+    end
   end
 
   def create
@@ -38,6 +52,7 @@ class RoomsController < ApplicationController
 
     def correct_user
       @room = current_user.rooms.find_by(id: params[:id])
+      flash[:danger] = "おっと、それは部屋作成者しかできない操作だぞ"
       redirect_to rooms_url if @room.nil?
     end
 

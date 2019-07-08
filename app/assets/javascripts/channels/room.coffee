@@ -7,7 +7,7 @@ document.addEventListener 'turbolinks:load', ->
 
     disconnected: ->
       this.perform('unsubscribed')
-      
+
     received: (data) ->
       $('#messages').append data['message']
 
@@ -15,7 +15,7 @@ document.addEventListener 'turbolinks:load', ->
       @perform 'speak', message: message
 
 $(document).on 'keypress', '[data-behavior~=room_speaker]', (event) ->
-  if event.keyCode is 13
+  if event.keyCode == 13 && event.shiftKey
     App.room.speak event.target.value
     event.target.value = ''
     event.preventDefault()

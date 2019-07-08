@@ -1,9 +1,17 @@
 <% provide(:title, @room.name) %>
 <div class="row">
-  <h1><%= @room.name %></h1>
-  <div id="messages", data-room_id="<%= @room.id %>">
-    <%= render @messages %>
+  <aside class="room_sidebar col-md-4">
+    <p class="room_title"><%= @room.name %></p>
+    <p class="room_about"><%= @room.about %></p>
+  </aside>
+  <div class="room_main col-md-8">
+    <div class="room_message_box">
+      <div id="messages", data-room_id="<%= @room.id %>">
+        <%= render @messages %>
+      </div>
+    </div>
+    <div class="room_form_wrapper">
+      <%= text_area nil, nil, :placeholder => "Shift + Enter で送信", 'data-behavior': 'room_speaker' %>
+    </div>
   </div>
-  <%= label nil, nil, '発言する:' %>
-  <%= text_field nil, nil, 'data-behavior': 'room_speaker' %>
 </div>

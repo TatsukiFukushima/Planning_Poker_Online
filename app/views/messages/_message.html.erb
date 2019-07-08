@@ -1,3 +1,6 @@
-<div class="messages">
-  <p><%= "#{message.sent_user.name}: #{message.content}" %></p>
+<div class="message_wrapper">
+  <p class="message_name"><%= message.sent_user.name %></p>
+  <div class="message_content">
+   <%= simple_format(message.content) %>
+  </div>
 </div>

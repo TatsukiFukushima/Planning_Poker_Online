@@ -52,8 +52,10 @@ class RoomsController < ApplicationController
 
     def correct_user
       @room = current_user.rooms.find_by(id: params[:id])
-      flash[:danger] = "おっと、それは部屋作成者しかできない操作だぞ"
-      redirect_to rooms_url if @room.nil?
+      if @room.nil?
+        flash[:danger] = "おっと、それは部屋作成者しかできない操作だぞ"
+        redirect_to rooms_url
+      end
     end
 
 end

@@ -15,7 +15,7 @@ $gray-medium-light: #eaeaea;
 /* ----- universal ----- */
 
 body {
-  padding-top: 60px;
+  padding-top: 40px;
 }
 
 section {
@@ -259,11 +259,13 @@ input {
   }
   .content {
     display: block;
-    font-size: 1.2em;
     margin: 5px 0 30px 60px;
     img {
       display: block;
       padding: 5px 0;
+    }
+    p {
+      font-size: 1.2em;
     }
   }
   .timestamp {
@@ -313,5 +315,59 @@ span.picture {
     float: right;
     display: inline;
     margin-left: 20px;
+  }
+}
+
+.room_sidebar {
+  border: solid 1px #aaa;
+  height: calc(100vh - 100px);
+  padding: 20px;
+  .room_title {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  .room_about {
+    margin-top: 20px;
+  }
+}
+
+.room_main {
+  padding: 0;
+  .room_message_box {
+    padding: 10px 20px;
+    border: solid 1px #aaa;
+    height: calc(100vh - 160px);
+    background-color: #f0f0f0;
+    overflow: scroll;
+  }
+  .room_form_wrapper {
+    textarea {
+      resize: none;
+      padding: 5px;
+      height: 60px;
+    }
+  }
+}
+
+
+/* ----- message ----- */
+
+.message_wrapper {
+  margin-top: 10px;
+  .message_name {
+    margin-bottom: 2px;
+    font-size: 0.9em;
+    font-weight: bold;
+  }
+  .message_content {
+    padding: 5px 15px;
+    width: 60%;
+    border-radius: 15px;
+    background-color: #88e35b;
+    p {
+      color: #111;
+      margin-bottom: 0;
+    }
   }
 }

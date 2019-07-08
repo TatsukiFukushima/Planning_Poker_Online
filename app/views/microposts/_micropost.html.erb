@@ -5,5 +5,5 @@
     <% if current_user?(micropost.user) %>
       <%= link_to "削除", micropost, method: :delete, class: :delete, data: {confirm: "コメントを削除するぞ。"} %>
     <% end %>
-    <span class="content"><%= micropost.content %></span>
+    <span class="content"><%= simple_format(micropost.content) %></span>
 </li>

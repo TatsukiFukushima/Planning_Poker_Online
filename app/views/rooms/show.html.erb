@@ -1,8 +1,39 @@
 <% provide(:title, @room.name) %>
 <div class="row">
   <aside class="room_sidebar col-md-4">
-    <p class="room_title"><%= @room.name %></p>
-    <p class="room_about"><%= @room.about %></p>
+    <div class="room_sidebar_top">
+      <p class="room_title"><%= @room.name %></p>
+      <p class="room_about"><%= @room.about %></p>
+    </div>
+    <div class="cards_wrapper">
+      <div class="card">
+        <span>1</span>
+      </div>
+      <div class="card">
+        <span>2</span>
+      </div>
+      <div class="card">
+        <span>3</span>
+      </div>
+      <div class="card">
+        <span>5</span>
+      </div>
+      <div class="card">
+        <span>8</span>
+      </div>
+      <div class="card">
+        <span>13</span>
+      </div>
+      <div class="card">
+        <span>21</span>
+      </div>
+      <div class="card">
+        <span>40</span>
+      </div>
+      <div class="card">
+        <span>X</span>
+      </div>
+    </div>
   </aside>
   <div class="room_main col-md-8">
     <div class="room_message_box">

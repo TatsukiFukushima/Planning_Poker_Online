@@ -319,9 +319,13 @@ span.picture {
 }
 
 .room_sidebar {
+  padding: 0;
+}
+
+.room_sidebar_top {
   color: #fff;
   border: solid 1px #aaa;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 200px);
   padding: 20px;
   background-color: #367319;
   .room_title {
@@ -335,12 +339,38 @@ span.picture {
   }
 }
 
+.cards_wrapper {
+  border: solid 1px #aaa;
+  background-color: #d8e3d3;
+  height: 100px;
+  width: 100%;
+  padding: 5px;
+  overflow-x: auto;
+  white-space: nowrap;
+  .card {
+    margin: 0 3px;
+    padding: 2px;
+    width: 80px;
+    height: 90px;
+    border: 1px solid black;
+    background-color: #321c4f;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.4);
+    display: inline-block;
+    span {
+      text-align: center;
+      font-size: 3em;
+      line-height: 1.1;
+      color: #fff;
+    }
+  }
+}
+
 .room_main {
   padding: 0;
   .room_message_box {
     padding: 10px 20px;
     border: solid 1px #aaa;
-    height: calc(100vh - 160px);
+    height: calc(100vh - 200px);
     background-color: #f0f0f0;
     overflow: scroll;
   }
@@ -348,7 +378,7 @@ span.picture {
     textarea {
       resize: none;
       padding: 5px;
-      height: 60px;
+      height: 100px;
     }
   }
 }
@@ -369,8 +399,8 @@ span.picture {
     max-width: 60%;
     display: inline-block;
     border-radius: 15px;
-    background-color: #00ea00;
-    // background-color: #88e35b;
+    // background-color: #00ea00;
+    background-color: #88e35b;
     p {
       color: #111;
       margin-bottom: 0;

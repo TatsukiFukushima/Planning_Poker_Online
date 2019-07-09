@@ -1,5 +1,16 @@
+room_id = ->
+  $('#messages').data('room_id')
+
+room_ch = ->
+  id = room_id()
+  if id?
+    return { channel: "RoomChannel", room_id: id }
+  else
+    return null
+
 document.addEventListener 'turbolinks:request-start', ->
-  App.room.disconnected()
+  if room_ch()?
+    App.room.unsubscribe()
 
 document.addEventListener 'turbolinks:load', ->
   App.room = App.cable.subscriptions.create { channel: "RoomChannel", room_id: $('#messages').data('room_id') },

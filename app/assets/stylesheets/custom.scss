@@ -319,9 +319,13 @@ span.picture {
 }
 
 .room_sidebar {
+  padding: 0;
+}
+
+.room_sidebar_top {
   color: #fff;
   border: solid 1px #aaa;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 200px);
   padding: 20px;
   background-color: #367319;
   .room_title {
@@ -335,12 +339,42 @@ span.picture {
   }
 }
 
+.cards_wrapper {
+  border: solid 1px #aaa;
+  background-color: #abc2a1;
+  // background-color: #d8e3d3;
+  height: 100px;
+  width: 100%;
+  padding: 5px;
+  overflow-x: auto;
+  white-space: nowrap;
+  .card {
+    margin: 0 2px;
+    width: 80px;
+    height: 90px;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.4);
+    display: inline-block;
+    position: relative;
+    span {
+      position: absolute;
+      top: 10px;
+      left: 5px;
+      font-size: 3em;
+      color: #fff;
+    }
+    img {
+      width: 100%;
+      filter: brightness(80%);
+    }
+  }
+}
+
 .room_main {
   padding: 0;
   .room_message_box {
     padding: 10px 20px;
     border: solid 1px #aaa;
-    height: calc(100vh - 160px);
+    height: calc(100vh - 200px);
     background-color: #f0f0f0;
     overflow: scroll;
   }
@@ -348,7 +382,7 @@ span.picture {
     textarea {
       resize: none;
       padding: 5px;
-      height: 60px;
+      height: 100px;
     }
   }
 }
@@ -369,8 +403,8 @@ span.picture {
     max-width: 60%;
     display: inline-block;
     border-radius: 15px;
-    background-color: #00ea00;
-    // background-color: #88e35b;
+    // background-color: #00ea00;
+    background-color: #88e35b;
     p {
       color: #111;
       margin-bottom: 0;

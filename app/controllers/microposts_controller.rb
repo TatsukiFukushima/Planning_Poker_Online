@@ -7,7 +7,9 @@ class MicropostsController < ApplicationController
     if @micropost.save
       redirect_to root_url
     else
-      render 'users/show'
+      @user = current_user
+      flash[:danger] = "何かつぶやきを入力してくれ"
+      redirect_to @user
     end
   end
 

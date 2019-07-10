@@ -1,6 +1,17 @@
-<div class="message_wrapper">
+<div class="message_wrapper message_<%= message.id %>" data-session="<%= session[:user_id] %>">
   <p class="message_name"><%= message.sent_user.name %></p>
-  <div class="message_content">
+  <div class="message_content content_<%= message.id %>">
    <%= simple_format(message.content) %>
   </div>
+  <script type="text/javascript">
+    var user_id = <%= message.sent_user.id %>;
+    var current_user_id = $('.message_wrapper').data('session');
+    if (current_user_id == user_id) {
+      $(".content_" + <%= message.id %>).css({ 'text-align': 'left', 'background-color': '#88e35b' });
+      $('.message_' + <%= message.id %>).css({ 'text-align': 'right' });
+    } else {
+      $(".content_" + <%= message.id %>).css({ 'background-color': '#ffffff', 'border': '1px solid #e0e0e0' });
+      $('.message_' + <%= message.id %>).css('text-align', 'left');
+    }
+  </script>
 </div>

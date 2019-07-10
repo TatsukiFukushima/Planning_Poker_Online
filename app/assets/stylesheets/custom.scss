@@ -190,8 +190,10 @@ input {
 }
 
 .btn {
-  background-color: #438B21;
-  border: none;
+  background-color: #28a745;
+  background: linear-gradient(#34d058, #28a745 90%);
+  border: 1px solid rgba(27,31,35,.2);
+  // background-color: #438B21;
   &:hover {
     background-color: #367319;
   }

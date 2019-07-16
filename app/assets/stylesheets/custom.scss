@@ -299,6 +299,7 @@ aside {
   textarea {
     height: 100px;
     margin-bottom: 5px;
+    resize: none;
   }
 }
 
@@ -344,7 +345,7 @@ span.picture {
 .room_sidebar_top {
   color: #e7f2e1;
   border: solid 1px #aaa;
-  height: calc(100vh - 200px);
+  height: calc(100vh - 190px);
   padding: 10px;
   background-color: #367319;
   .room_title {
@@ -363,9 +364,14 @@ span.picture {
 .room_issues {
   color: #333;
   background-color: #e7f2e1;
-  padding: 20px 10px 70px 10px;
-  .room_issue_top {
+  padding: 20px 10px 20px 10px;
+  .room_issues_top {
     font-size: 1.2em;
+  }
+  .room_issues_wrapper {
+    max-height: calc(100vh - 415px);
+    overflow-y: auto;
+    white-space: nowrap;
   }
   a {
     color: #333;
@@ -414,9 +420,10 @@ span.picture {
   .room_message_box {
     padding: 10px 20px 150px 20px;
     border: solid 1px #aaa;
-    height: calc(100vh - 200px);
+    height: calc(100vh - 190px);
     background-color: #eee;
     overflow: scroll;
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.3) inset;
   }
   .room_form_wrapper {
     textarea {

@@ -1,7 +1,7 @@
 <% provide(:title, 'Issue') %>
 <div class="row">
   <h1>Issue</h1>
-  <%= link_to "Issueを作成", "#", class: "btn btn-lg btn-primary btn-new-issue" %>
+  <%= link_to "Issueを作成", new_issue_path, class: "btn btn-lg btn-primary btn-new-issue" %>
   <div id="issues">
     <%= render @issues %>
   </div>

@@ -7,7 +7,7 @@
       <div class="room_issues">
         <p class="room_issue_top">Issue一覧</p>
         <%= link_to "編集", "/rooms/#{@room.id}/room_issues/edit" %>
-        <% @room.issues.each do |issue| %>
+        <% @room.issues.order(created_at: :desc).each do |issue| %>
           <div class="room_issue_record">
             <%= issue.name %>
           </div>

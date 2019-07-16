@@ -23,5 +23,6 @@ Rails.application.routes.draw do
   # memberみたいなの使う
   get '/rooms/:id/room_issues/edit' => 'room_issues#edit'
   post '/room_issues/create' => 'room_issues#create'
+  post '/room_issues/destroy' => 'room_issues#destroy'
 
 end

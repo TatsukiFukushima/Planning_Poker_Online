@@ -315,8 +315,8 @@ span.picture {
 .room {
   border: 1px solid #cccccc;
   background-color: #f9f9f9;
-  padding: 10px 30px;
-  height: 70px;
+  padding: 15px 30px;
+  height: 80px;
 
   &:hover {
     background-color: #ececec;
@@ -458,21 +458,32 @@ span.picture {
 .issue {
   border: 1px solid #cccccc;
   background-color: #f9f9f9;
-  padding: 10px 30px;
-  height: 70px;
+  padding: 15px 30px;
+  height: 80px;
 
   &:hover {
     background-color: #ececec;
   }
 
   .issue_name {
-    font-size: 2em;
+    font-size: 1.9em;
     margin-top: 5px;
+    a:visited {
+      color: #444;
+    }
   }
 
   .issue_menu {
     float: right;
     display: inline;
     margin-left: 20px;
+  }
+}
+
+.tied_issue {
+  background-color: #e3ffe3;
+  border: 1px solid #a1c7a1;
+  &:hover {
+    background-color: #d5f5d5;
   }
 }

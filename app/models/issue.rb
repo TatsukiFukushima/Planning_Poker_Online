@@ -1,9 +1,8 @@
 class Issue < ApplicationRecord
-  has_many :room_issues
+  has_many :room_issues, dependent: :destroy
   has_many :rooms, through: :room_issues
 
-  def index
-  end
+  validates :name, presence: true
 
   def tied?(room)
     room.issues.include?(self)

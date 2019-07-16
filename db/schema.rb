@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190711024310) do
+ActiveRecord::Schema.define(version: 20190711025433) do
 
   create_table "issues", force: :cascade do |t|
     t.string "name"
@@ -34,6 +34,15 @@ ActiveRecord::Schema.define(version: 20190711024310) do
     t.datetime "updated_at", null: false
     t.index ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_microposts_on_user_id"
+  end
+
+  create_table "room_issues", force: :cascade do |t|
+    t.integer "room_id"
+    t.integer "issue_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["issue_id"], name: "index_room_issues_on_issue_id"
+    t.index ["room_id"], name: "index_room_issues_on_room_id"
   end
 
   create_table "rooms", force: :cascade do |t|

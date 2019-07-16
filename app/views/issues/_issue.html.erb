@@ -1,0 +1,6 @@
+<div class="issue">
+  <p class="issue_name"><%= issue.name %><p>
+  <span class="issue_about"><%= issue.about %></span>
+  <%= link_to "削除", issue, method: :delete, class: "issue_menu delete_issue", data: {confirm: "Issue を削除するぞ。"} %>
+  <%= link_to "編集", edit_issue_path(issue.id), class: "issue_menu edit_issue" %>
+</div>

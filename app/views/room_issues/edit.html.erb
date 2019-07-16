@@ -1,0 +1,17 @@
+<% provide(:title, 'Issue | ' + @room.name) %>
+<div class="row">
+  <h1>Issue | <%= @room.name %></h1>
+  <div class="issues">
+    <% @issues.each do |issue| %>
+    <div class="issue <%= "tied_issue" if issue.tied?(@room) %>">
+      <p class="issue_name"><%= issue.name %></p>
+      <span class="issue_about"><%= issue.about %></span>
+      <% if issue.tied?(@room) %>
+        <%= link_to "部屋から削除", room_issues_destroy_path(room_id: @room.id, issue_id: issue.id), method: :post, class: "issue_menu delete_issue" %>
+      <% else %>
+        <%= link_to "追加", room_issues_create_path(room_id: @room.id, issue_id: issue.id), method: :post, class: "issue_menu add_issue" %>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</div>

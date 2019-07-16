@@ -10,20 +10,22 @@ room_ch = ->
 
 document.addEventListener 'turbolinks:request-start', ->
   if room_ch()?
+    console.log("restart");
     App.room.unsubscribe()
 
 document.addEventListener 'turbolinks:load', ->
-  App.room = App.cable.subscriptions.create { channel: "RoomChannel", room_id: $('#messages').data('room_id') },
-    connected: ->
+  if room_ch()?
+    App.room = App.cable.subscriptions.create { channel: "RoomChannel", room_id: $('#messages').data('room_id') },
+      connected: ->
 
-    disconnected: ->
-      this.perform('unsubscribed')
+      disconnected: ->
+        this.perform('unsubscribed')
 
-    received: (data) ->
-      $('#messages').append data['message']
+      received: (data) ->
+        $('#messages').append data['message']
 
-    speak: (message) ->
-      @perform 'speak', message: message
+      speak: (message) ->
+        @perform 'speak', message: message
 
 $(document).on 'keypress', '[data-behavior~=room_speaker]', (event) ->
   if event.keyCode == 13 && event.shiftKey

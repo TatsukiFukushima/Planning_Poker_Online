@@ -4,6 +4,15 @@
     <div class="room_sidebar_top">
       <p class="room_title"><%= @room.name %></p>
       <p class="room_about"><%= @room.about %></p>
+      <div class="room_issues">
+        <p class="room_issue_top">Issue一覧</p>
+        <%= link_to "編集", "/rooms/#{@room.id}/room_issues/edit" %>
+        <% @room.issues.each do |issue| %>
+          <div class="room_issue_record">
+            <%= issue.name %>
+          </div>
+        <% end %>
+      </div>
     </div>
     <div class="cards_wrapper">
       <div class="card">

@@ -318,6 +318,7 @@ span.picture {
   background-color: #f9f9f9;
   padding: 15px 30px;
   height: 80px;
+  overflow: hidden;
 
   &:hover {
     background-color: #ececec;
@@ -326,6 +327,8 @@ span.picture {
   .room_name {
     font-size: 1.9em;
     margin-top: 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     a:visited {
       color: #444;
     }
@@ -382,7 +385,13 @@ span.picture {
   .room_issue_record {
     background: #fff;
     border: 1px solid #ccc;
-    padding: 5px 10px;
+    padding: 7px 10px;
+    overflow: hidden;
+    p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin: 0;
+    }
   }
 }
 
@@ -410,7 +419,6 @@ span.picture {
     }
     img {
       width: 100%;
-      filter: brightness(85%);
     }
   }
 }
@@ -467,6 +475,7 @@ span.picture {
   background-color: #f9f9f9;
   padding: 15px 30px;
   height: 80px;
+  overflow: hidden;
 
   &:hover {
     background-color: #ececec;
@@ -475,6 +484,8 @@ span.picture {
   .issue_name {
     font-size: 1.9em;
     margin-top: 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     a:visited {
       color: #444;
     }
@@ -492,5 +503,16 @@ span.picture {
   border: 1px solid #a1c7a1;
   &:hover {
     background-color: #d5f5d5;
+  }
+}
+
+.room_issue_top {
+  max-width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+  h1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }

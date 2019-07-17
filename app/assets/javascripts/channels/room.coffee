@@ -10,7 +10,6 @@ room_ch = ->
 
 document.addEventListener 'turbolinks:request-start', ->
   if room_ch()?
-    console.log("restart");
     App.room.unsubscribe()
 
 document.addEventListener 'turbolinks:load', ->
@@ -26,6 +25,11 @@ document.addEventListener 'turbolinks:load', ->
 
       speak: (message) ->
         @perform 'speak', message: message
+
+      $(".card").click (event) ->
+        App.room.speak '<img src="/assets/background_card_' + $(this).attr("value") + '">'
+        event.target.value = ''
+        event.preventDefault()
 
 $(document).on 'keypress', '[data-behavior~=room_speaker]', (event) ->
   if event.keyCode == 13 && event.shiftKey

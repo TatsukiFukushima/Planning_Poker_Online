@@ -1,6 +1,8 @@
 <% provide(:title, 'Issue | ' + @room.name) %>
 <div class="row">
-  <h1>Issue | <%= @room.name %></h1>
+  <div class="room_issue_top">
+    <h1>Issue | <%= @room.name %></h1>
+  </div>
   <div class="issues">
     <% @issues.each do |issue| %>
     <div class="issue <%= "tied_issue" if issue.tied?(@room) %>">

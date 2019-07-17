@@ -6,52 +6,43 @@
       <p class="room_about"><%= @room.about %></p>
       <div class="room_issues">
         <p class="room_issues_top">Issue一覧</p>
-        <%= link_to "編集", "/rooms/#{@room.id}/room_issues/edit" %>
+        <%= link_to "追加または削除", "/rooms/#{@room.id}/room_issues/edit" %>
         <div class="room_issues_wrapper">
           <% @room.issues.order(created_at: :desc).each do |issue| %>
             <div class="room_issue_record">
-              <%= issue.name %>
+              <p><%= issue.name %></p>
             </div>
           <% end %>
         </div>
       </div>
     </div>
     <div class="cards_wrapper">
-      <div class="card">
-        <%= image_tag('background_card.png') %>
-        <span>1</span>
+      <div class="card card_1" value="1">
+        <%= image_tag("background_card_1.png") %>
       </div>
-      <div class="card">
-        <%= image_tag('background_card.png') %>
-        <span>2</span>
+      <div class="card card_2" value="2">
+        <%= image_tag("background_card_2.png") %>
       </div>
-      <div class="card">
-        <%= image_tag('background_card.png') %>
-        <span>3</span>
+      <div class="card card_3" value="3">
+        <%= image_tag("background_card_3.png") %>
       </div>
-      <div class="card">
-        <%= image_tag('background_card.png') %>
-        <span>5</span>
+      <div class="card card_5" value="5">
+        <%= image_tag("background_card_5.png") %>
       </div>
-      <div class="card">
-        <%= image_tag('background_card.png') %>
-        <span>8</span>
+      <div class="card card_8" value="8">
+        <%= image_tag("background_card_8.png") %>
       </div>
-      <div class="card">
-        <%= image_tag('background_card.png') %>
-        <span>13</span>
+      <div class="card card_13" value="13">
+        <%= image_tag("background_card_13.png") %>
       </div>
-      <div class="card">
-        <%= image_tag('background_card.png') %>
-        <span>21</span>
+      <div class="card card_21" value="21">
+        <%= image_tag("background_card_21.png") %>
       </div>
-      <div class="card">
-        <%= image_tag('background_card.png') %>
-        <span>40</span>
+      <div class="card card_40" value="40">
+        <%= image_tag("background_card_40.png") %>
       </div>
-      <div class="card">
-        <%= image_tag('background_card.png') %>
-        <span>X</span>
+      <div class="card card_x" value="x">
+        <%= image_tag("background_card_x.png") %>
       </div>
     </div>
   </aside>

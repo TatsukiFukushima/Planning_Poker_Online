@@ -8,6 +8,12 @@ room_ch = ->
   else
     return null
 
+messages_height = ->
+  h = 0;
+  $("div.message_wrapper").each ->
+    h += ($(this).height()) + 10;
+  return h + 50
+
 document.addEventListener 'turbolinks:request-start', ->
   if room_ch()?
     App.room.unsubscribe()
@@ -25,6 +31,7 @@ document.addEventListener 'turbolinks:load', ->
 
       speak: (message) ->
         @perform 'speak', message: message
+        $('div.room_message_box').animate({scrollTop: messages_height()});
 
       $(".card").click (event) ->
         App.room.speak '<img src="/assets/background_card_' + $(this).attr("value") + '">'

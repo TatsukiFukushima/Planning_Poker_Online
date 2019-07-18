@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       @user = current_user
     end
     @micropost = current_user.microposts.build if logged_in?
-    @microposts = @user.microposts.order(created_at: :desc).paginate(page: params[:page])
+    @microposts = Kaminari.paginate_array(@user.microposts.order(created_at: :desc)).page(params[:page]).per(10)
   end
 
   # GET /users/new

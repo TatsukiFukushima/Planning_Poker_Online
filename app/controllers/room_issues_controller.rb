@@ -1,7 +1,7 @@
 class RoomIssuesController < ApplicationController
   def edit
     @room = Room.find(params[:id])
-    @issues = Issue.all.order(created_at: :desc)
+    @issues = Kaminari.paginate_array(Issue.all.order(created_at: :desc)).page(params[:page]).per(10)
   end
 
   def create

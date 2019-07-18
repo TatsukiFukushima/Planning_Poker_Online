@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
 
 /* ----- mixins, variables, etc. ----- */
 
@@ -72,6 +73,7 @@ p {
   color: #fff;
   letter-spacing: -1px;
   font-weight: bold;
+  transition: all 0.2s ease-out;
   &:hover {
     color: #ddd;
     text-decoration: none;
@@ -94,6 +96,7 @@ footer {
   color: $gray-light;
   a {
     color: $gray;
+    transition: all 0.2s ease-out;
     &:hover {
       color: $gray-darker;
     }
@@ -200,6 +203,7 @@ input {
   background: linear-gradient(#34d058, #28a745 90%);
   border: 1px solid rgba(27,31,35,.2);
   // background-color: #438B21;
+  transition: all 0.2s ease-out;
   &:hover {
     background-color: #367319;
   }
@@ -247,6 +251,7 @@ input {
     padding: 10px;
     border: 1px solid #ddd;
     font-size: 1.5em;
+    transition: all 0.2s ease-out;
     &:hover {
       background-color: #f7f7f7;
     }
@@ -319,7 +324,7 @@ span.picture {
   padding: 15px 30px;
   height: 80px;
   overflow: hidden;
-
+  transition: all 0.2s ease-out;
   &:hover {
     background-color: #ececec;
   }
@@ -400,7 +405,7 @@ span.picture {
   background-color: #abc2a1;
   height: 100px;
   width: 100%;
-  padding: 5px;
+  padding: 4px;
   overflow-x: auto;
   white-space: nowrap;
   .card {
@@ -410,6 +415,11 @@ span.picture {
     box-shadow: 3px 3px 3px rgba(0,0,0,0.4);
     display: inline-block;
     position: relative;
+    transition: all 0.2s ease-out;
+    &:hover {
+      cursor: pointer;
+      box-shadow: -1px -1px 3px 3px rgba(255,255,200,0.4);
+    }
     span {
       position: absolute;
       top: 10px;
@@ -438,6 +448,8 @@ span.picture {
       resize: none;
       padding: 5px;
       height: 100px;
+      font-size: 1.1em;
+      line-height: 1.4;
     }
   }
 }
@@ -447,7 +459,6 @@ span.picture {
 
 .message_wrapper {
   margin-top: 10px;
-  // text-align: right;
   .message_name {
     margin-bottom: 1px;
     font-size: 0.9em;
@@ -458,11 +469,9 @@ span.picture {
     max-width: 70%;
     display: inline-block;
     border-radius: 15px;
-    // background-color: #88e35b;
     p {
       color: #111;
       margin-bottom: 0;
-      // text-align: left;
     }
   }
 }
@@ -476,7 +485,7 @@ span.picture {
   padding: 15px 30px;
   height: 80px;
   overflow: hidden;
-
+  transition: all 0.2s ease-out;
   &:hover {
     background-color: #ececec;
   }
@@ -501,6 +510,7 @@ span.picture {
 .tied_issue {
   background-color: #e3ffe3;
   border: 1px solid #a1c7a1;
+  transition: all 0.2s ease-out;
   &:hover {
     background-color: #d5f5d5;
   }
@@ -514,5 +524,81 @@ span.picture {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+  }
+}
+
+
+/* ----- pagination ----- */
+
+.paginate {
+  text-align: center;
+  .pagination {
+    margin-top: 30px;
+    margin-bottom: 0;
+  }
+}
+
+.page {
+  font-size: 32px;
+  letter-spacing: -4px;
+  font-weight: bold;
+  font-family: 'Montserrat';
+  a {
+    color: #f4b400;
+    &:hover {
+      text-decoration: underline;
+      color: #f4b400;
+      background-color: #fff;
+    }
+    &:visited {
+      color: #f4b400;
+    }
+  }
+}
+
+.current {
+  color: #db4437;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.prev_p {
+  font-size: 32px;
+  letter-spacing: -5px;
+  font-weight: bold;
+  font-family: 'Montserrat';
+  color: #4285f4;
+}
+
+.next_k {
+  font-size: 32px;
+  letter-spacing: -5px;
+  font-weight: bold;
+  font-family: 'Montserrat';
+  color: #4285f4;
+}
+
+.next_e {
+  font-size: 32px;
+  letter-spacing: -5px;
+  font-weight: bold;
+  font-family: 'Montserrat';
+  color: #0f9d58
+}
+
+.next_r {
+  font-size: 32px;
+  letter-spacing: -5px;
+  font-weight: bold;
+  font-family: 'Montserrat';
+  color: #db4437;
+}
+
+.prev, .next {
+  font-size: 24px;
+  a {
+    margin: 10px 20px;
+    color: #4285f4;
   }
 }

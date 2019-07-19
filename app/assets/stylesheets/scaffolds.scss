@@ -83,3 +83,18 @@ div {
 label {
   display: block;
 }
+
+
+/* ----- レスポンシブ ----- */
+
+@media screen and (max-width: 480px) {
+  body {
+    margin: 10px;
+    padding-top: 60px;
+  }
+
+  .dropdown-toggle {
+    float: right;
+  }
+
+}

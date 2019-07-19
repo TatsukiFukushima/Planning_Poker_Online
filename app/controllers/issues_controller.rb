@@ -1,6 +1,6 @@
 class IssuesController < ApplicationController
   def index
-    @issues = Kaminari.paginate_array(Issue.all.order(created_at: :desc)).page(params[:page]).per(10)
+    @issues = Kaminari.paginate_array(Issue.all.order(created_at: :desc)).page(params[:page]).per(5)
   end
 
   def new

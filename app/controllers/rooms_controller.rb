@@ -11,7 +11,7 @@ class RoomsController < ApplicationController
   end
 
   def index
-    @rooms = Kaminari.paginate_array(Room.all.includes(:created_user).order(created_at: :desc)).page(params[:page]).per(10)
+    @rooms = Kaminari.paginate_array(Room.all.includes(:created_user).order(created_at: :desc)).page(params[:page]).per(5)
   end
 
   def edit

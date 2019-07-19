@@ -10,9 +10,7 @@ room_ch = ->
 
 messages_height = ->
   h = 0;
-  $("div.message_wrapper").each ->
-    h += ($(this).height()) + 10;
-  return h + 50
+  return $('#messages').height()
 
 document.addEventListener 'turbolinks:request-start', ->
   if room_ch()?
@@ -22,6 +20,7 @@ document.addEventListener 'turbolinks:load', ->
   if room_ch()?
     App.room = App.cable.subscriptions.create { channel: "RoomChannel", room_id: $('#messages').data('room_id') },
       connected: ->
+        $('div.room_message_box').scrollTop(messages_height());
 
       disconnected: ->
         this.perform('unsubscribed')
@@ -35,8 +34,11 @@ document.addEventListener 'turbolinks:load', ->
 
       $(".card").click (event) ->
         App.room.speak '<img src="/assets/background_card_' + $(this).attr("value") + '">'
-        event.target.value = ''
-        event.preventDefault()
+
+      $(".btn-message").click ->
+        target = document.getElementById("textarea_message")
+        App.room.speak target.value
+        target.value = ''
 
 $(document).on 'keypress', '[data-behavior~=room_speaker]', (event) ->
   if event.keyCode == 13 && event.shiftKey

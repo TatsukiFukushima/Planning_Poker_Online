@@ -6,6 +6,12 @@
     remote:        data-remote
     paginator:     the paginator that renders the pagination tags inside
 -%>
+<% if current_page.last? && !current_page.first?%>
+  <div class="pagination_message">
+    最も的確な検索サイトっぽさを表示するために、検索サイトと似た文章をここに表示しています。<br>
+    検索結果は既にすべて表示されています。
+  </div>
+<% end %>
 <%= paginator.render do -%>
   <nav class="pagination">
     <%= prev_page_tag unless current_page.first? %>

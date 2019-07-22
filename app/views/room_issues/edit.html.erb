@@ -4,16 +4,28 @@
     <h1>Issue | <%= @room.name %></h1>
   </div>
   <div class="issues">
-    <% @issues.each do |issue| %>
-    <div class="issue <%= "tied_issue" if issue.tied?(@room) %>">
-      <p class="issue_name"><%= issue.name %></p>
-      <span class="issue_about"><%= issue.about %></span>
-      <% if issue.tied?(@room) %>
-        <%= link_to "部屋から削除", room_issues_destroy_path(room_id: @room.id, issue_id: issue.id), method: :post, class: "issue_menu delete_issue" %>
-      <% else %>
-        <%= link_to "追加", room_issues_create_path(room_id: @room.id, issue_id: issue.id), method: :post, class: "issue_menu add_issue" %>
+    <% if @issues.any? %>
+      <% @issues.each do |issue| %>
+        <div class="issue <%= "tied_issue" if issue.tied?(@room) %>">
+          <% if issue.point && issue.point != "" %>
+            <div class="issue_point"><%= issue.point %></div>
+          <% end %>
+          <p class="issue_name"><%= issue.name %></p>
+          <span class="issue_about"><%= issue.about %></span>
+          <% if issue.tied?(@room) %>
+            <%= link_to "部屋から削除", room_issues_destroy_path(room_id: @room.id, issue_id: issue.id), method: :post, class: "issue_menu delete_issue" %>
+            <%= link_to "編集", edit_issue_path(issue.id), class: "issue_menu edit_issue" %>
+          <% else %>
+            <%= link_to "追加", room_issues_create_path(room_id: @room.id, issue_id: issue.id), method: :post, class: "issue_menu add_issue" %>
+            <%= link_to "編集", edit_issue_path(issue.id), class: "issue_menu edit_issue" %>
+          <% end %>
+        </div>
       <% end %>
-    </div>
+    <% else %>
+      <div class="issue">
+        <p class="issue_none">まだissueが作られてないみたいだな。<br>
+        <%= link_to "issue作成ページ", new_issue_path %> から作成してくれ。</p>
+      </div>
     <% end %>
   </div>
 </div>

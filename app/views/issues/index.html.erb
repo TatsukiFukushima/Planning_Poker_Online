@@ -3,7 +3,13 @@
   <h1>Issue</h1>
   <%= link_to "Issueを作成", new_issue_path, class: "btn btn-lg btn-primary btn-new-issue" %>
   <div id="issues">
-    <%= render @issues %>
+    <% if @issues.any? %>
+      <%= render @issues %>
+    <% else %>
+      <div class="issue">
+        <p class="issue_none">まだissueが作られてないみたいだな。<br>右上のボタンから作成してくれ。</p>
+      </div>
+    <% end %>
   </div>
 </div>
 <div class="paginate issues_paginate">

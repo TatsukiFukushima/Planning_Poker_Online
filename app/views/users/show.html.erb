@@ -16,14 +16,19 @@
   </aside>
 
   <div class="col-md-8">
+    <h3>つぶやき</h3>
     <% if @user.microposts.any? %>
-      <h3>つぶやき</h3>
       <ol class="microposts">
         <%= render @microposts %>
       </ol>
+    <% else %>
+      <ul class="microposts">
+        <li id="micropost-none">
+          <span class="content">まだつぶやきが無いみたいだな。</span>
+        </li>
+      </ul>
     <% end %>
   </div>
-  
 </div>
 
 <% if @user.microposts.any? %>

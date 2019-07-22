@@ -12,6 +12,17 @@
       <%= f.label :about, "説明" %>
       <%= f.text_field :about, class: 'form-control' %>
 
+      <%= f.label :point, "ポイント(決定している場合)" %>
+      <%= f.select :point, [["1", "1"],
+                            ["2", "2"],
+                            ["3", "3"],
+                            ["5", "5"],
+                            ["8", "8"],
+                            ["13", "13"],
+                            ["21", "21"],
+                            ["40", "40"],
+                            ["x", "x"]], class: 'form-control point_form', :include_blank => true %>
+
       <%= f.submit "登録", class: "btn btn-primary" %>
     <% end %>
   </div>

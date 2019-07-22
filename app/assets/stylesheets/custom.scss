@@ -118,6 +118,11 @@ footer {
   }
 }
 
+.about_text, .help_text, .contact_text {
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
 
 /* ----- miscellaneous ----- */
 
@@ -355,6 +360,12 @@ span.picture {
     display: inline;
     margin-left: 20px;
   }
+
+  .room_none {
+    color: #666;
+    font-size: 17px;
+    line-height: 1.5;
+  }
 }
 
 .room_sidebar {
@@ -401,12 +412,23 @@ span.picture {
   .room_issue_record {
     background: #fff;
     border: 1px solid #ccc;
-    padding: 7px 10px;
+    padding: 4px 7px;
+    height: 32px;
     overflow: hidden;
     p {
+      display: inline;
       overflow: hidden;
       text-overflow: ellipsis;
-      margin: 0;
+    }
+    .issue_point {
+      display: inline-block;
+      text-align: center;
+      color: #fff;
+      background-color: #367319;
+      padding: 2px 0;
+      width: 22px;
+      border-radius: 11px;
+      font-size: 14px;
     }
   }
 }
@@ -508,6 +530,19 @@ span.picture {
     background-color: #ececec;
   }
 
+  .issue_point {
+    float: left;
+    text-align: center;
+    color: #fff;
+    background-color: #367319;
+    margin-top: -11px;
+    margin-left: -26px;
+    padding: 3px 0;
+    width: 24px;
+    border-radius: 12px;
+    font-size: 15px;
+  }
+
   .issue_name {
     font-size: 1.9em;
     margin-top: 5px;
@@ -522,6 +557,12 @@ span.picture {
     float: right;
     display: inline;
     margin-left: 20px;
+  }
+
+  .issue_none {
+    color: #666;
+    font-size: 17px;
+    line-height: 1.5;
   }
 }
 
@@ -543,6 +584,10 @@ span.picture {
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+}
+
+#issue_point {
+  height: 32px;
 }
 
 

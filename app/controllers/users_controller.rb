@@ -37,6 +37,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
+      cookies.encrypted[:user_id] = @user.id
       flash[:success] = "ようこそPPOの世界へ。 楽しんでいってくれよな！"
       redirect_to @user
     else

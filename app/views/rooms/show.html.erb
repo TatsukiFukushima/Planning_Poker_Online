@@ -10,6 +10,9 @@
         <div class="room_issues_wrapper">
           <% @room.issues.order(created_at: :desc).each do |issue| %>
             <div class="room_issue_record">
+              <% if issue.point && issue.point != "" %>
+                <div class="issue_point"><%= issue.point %></div>
+              <% end %>
               <p><%= issue.name %></p>
             </div>
           <% end %>

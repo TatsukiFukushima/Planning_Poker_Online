@@ -1,5 +1,5 @@
 <div class="issue">
-  <% if issue.point %>
+  <% if issue.point && issue.point != "" %>
     <div class="issue_point"><%= issue.point %></div>
   <% end %>
   <p class="issue_name"><%= issue.name %><p>

@@ -1,10 +1,14 @@
 body {
   background-color: #fff;
   color: #333;
-  margin: 33px;
+  margin: 33px 33px 0 33px;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  min-height: calc(100vh - 33px);
+  .body-container {
+    min-height: calc(100vh - 168px);
+  }
 }
 
 p, ol, ul, td {
@@ -92,9 +96,4 @@ label {
     margin: 10px;
     padding-top: 60px;
   }
-
-  .dropdown-toggle {
-    float: right;
-  }
-
 }

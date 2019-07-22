@@ -83,6 +83,7 @@ p {
 
 .dropdown-toggle {
   font-size: 2em;
+  float: right;
   color: #fff !important;
 }
 
@@ -90,12 +91,14 @@ p {
 /* ----- footer ----- */
 
 footer {
-  margin-top: 45px;
+  margin: 45px -33px 0 -33px;
   padding-top: 5px;
-  border-top: 1px solid $gray-medium-light;
+  border-top: 1px solid #ccc;
   color: $gray-light;
+  background-color: #eee;
+  height: 50px;
   a {
-    color: $gray;
+    color: #666;
     transition: all 0.2s ease-out;
     &:hover {
       color: $gray-darker;
@@ -105,11 +108,12 @@ footer {
     float: left;
   }
   ul {
-    float: right;
+    // float: right;
     list-style: none;
     li {
       float: left;
       margin-left: 15px;
+      font-size: 14px;
     }
   }
 }
@@ -326,7 +330,7 @@ span.picture {
 /* ----- rooms ----- */
 
 .room {
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   background-color: #f9f9f9;
   padding: 15px 30px;
   height: 80px;
@@ -624,15 +628,4 @@ span.picture {
     margin: 10px 20px;
     color: #4285f4;
   }
-}
-
-
-/* ----- レスポンシブ ----- */
-
-@media screen and (max-width: 480px) {
-  body {
-    margin: 10px;
-  }
-
-
 }

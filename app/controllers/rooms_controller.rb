@@ -33,6 +33,7 @@ class RoomsController < ApplicationController
     @room.user_id = current_user.id
     if @room.save
       flash[:success] = "部屋を作成したぞ"
+      Message.create!(content: "部屋を作成しました", user_id: current_user.id, room_id: @room.id)
       redirect_to rooms_url
     else
       render 'new'

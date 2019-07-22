@@ -1,4 +1,7 @@
 <div class="issue">
+  <% if issue.point %>
+    <div class="issue_point"><%= issue.point %></div>
+  <% end %>
   <p class="issue_name"><%= issue.name %><p>
   <span class="issue_about"><%= issue.about %></span>
   <%= link_to "削除", issue, method: :delete, class: "issue_menu delete_issue", data: {confirm: "Issue を削除するぞ。"} %>

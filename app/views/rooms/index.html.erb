@@ -3,7 +3,13 @@
   <h1>見積もり部屋</h1>
   <%= link_to "部屋を作成", new_room_path, class: "btn btn-lg btn-primary btn-new-room" %>
   <div id="rooms">
-    <%= render @rooms %>
+    <% if @rooms.any? %>
+      <%= render @rooms %>
+    <% else %>
+    <div class="room">
+      <p class="room_none">まだ部屋が作られてないみたいだな。<br>右上のボタンから作成してくれ。</p>
+    </div>
+    <% end %>
   </div>
 </div>
 <div class="paginate rooms_paginate">

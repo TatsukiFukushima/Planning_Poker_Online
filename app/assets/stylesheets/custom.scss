@@ -118,6 +118,11 @@ footer {
   }
 }
 
+.about_text, .help_text, .contact_text {
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
 
 /* ----- miscellaneous ----- */
 
@@ -355,6 +360,12 @@ span.picture {
     display: inline;
     margin-left: 20px;
   }
+
+  .room_none {
+    color: #666;
+    font-size: 17px;
+    line-height: 1.5;
+  }
 }
 
 .room_sidebar {
@@ -508,6 +519,19 @@ span.picture {
     background-color: #ececec;
   }
 
+  .issue_point {
+    float: left;
+    text-align: center;
+    color: #fff;
+    background-color: #367319;
+    margin-top: -11px;
+    margin-left: -26px;
+    padding: 2px;
+    min-width: 22px;
+    border-radius: 11px;
+    font-size: 16px;
+  }
+
   .issue_name {
     font-size: 1.9em;
     margin-top: 5px;
@@ -522,6 +546,12 @@ span.picture {
     float: right;
     display: inline;
     margin-left: 20px;
+  }
+
+  .issue_none {
+    color: #666;
+    font-size: 17px;
+    line-height: 1.5;
   }
 }
 

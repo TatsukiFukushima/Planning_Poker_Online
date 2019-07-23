@@ -18,6 +18,7 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out if logged_in?
+    session.delete(:forwarding_url) if session[:forwarding_url]
     redirect_to root_url
   end
 end

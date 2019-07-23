@@ -1,5 +1,10 @@
 <% provide(:title, 'Issue | ' + @room.name) %>
 <div class="row">
+  <div class="return">
+    <%= link_to @room do %>
+      <i class="fab fa-youtube fa-4x fa-flip-horizontal"></i>
+    <% end %>
+  </div>
   <div class="room_issue_top">
     <h1>Issue | <%= @room.name %></h1>
   </div>

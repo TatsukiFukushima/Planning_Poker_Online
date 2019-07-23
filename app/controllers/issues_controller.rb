@@ -6,10 +6,12 @@ class IssuesController < ApplicationController
   end
 
   def new
+    set_return_url
     @issue = Issue.new
   end
 
   def edit
+    set_return_url
     @issue = Issue.find(params[:id])
   end
 
@@ -43,5 +45,9 @@ class IssuesController < ApplicationController
   private
     def issue_params
       params.require(:issue).permit(:name, :about, :point)
+    end
+
+    def set_return_url
+      @return_url = session[:forwarding_url] || issues_path
     end
 end

@@ -11,7 +11,7 @@
       <p class="room_about"><%= @room.about %></p>
       <div class="room_issues">
         <p class="room_issues_top">Issue一覧</p>
-        <%= link_to "追加または削除", "/rooms/#{@room.id}/room_issues/edit" %>
+        <%= link_to "編集", "/rooms/#{@room.id}/room_issues/edit" %>
         <div class="room_issues_wrapper">
           <% @room.issues.order(created_at: :desc).each do |issue| %>
             <div class="room_issue_record">

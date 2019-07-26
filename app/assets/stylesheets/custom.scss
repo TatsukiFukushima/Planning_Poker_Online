@@ -211,7 +211,6 @@ input {
   background-color: #28a745;
   background: linear-gradient(#34d058, #28a745 90%);
   border: 1px solid rgba(27,31,35,.2);
-  // background-color: #438B21;
   transition: all 0.2s ease-out;
   &:hover {
     background-color: #367319;
@@ -229,6 +228,20 @@ input {
 .btn-new-room, .btn-new-issue {
   float: right;
   margin-top: -60px;
+}
+
+.btn-new-issue-from-github {
+  float: right;
+  margin-top: -63px;
+  margin-right: 145px;
+  font-size: 4em;
+  a {
+    transition: all 0.2s;
+    color: #333;
+    &:hover {
+      background-color: #fff;
+    }
+  }
 }
 
 .btn-message {
@@ -564,6 +577,16 @@ span.picture {
     white-space: nowrap;
     a:visited {
       color: #444;
+    }
+  }
+  .issue_about_wrapper {
+    float: left;
+    width: calc(100% - 145px);
+    overflow: hidden;
+    .issue_about {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
   }
 

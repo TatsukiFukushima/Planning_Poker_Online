@@ -49,7 +49,7 @@ class IssuesController < ApplicationController
   def import_create
     client = Octokit::Client.new access_token: "2ff1e37b20222303d6b81a3f281d42971d281bd7"
     begin
-      issues = client.issues params[:repo]
+      issues = client.issues(params[:repo])
       issues.each do |issue|
         Issue.create(name: issue.title, about: issue.body)
       end

@@ -11,19 +11,8 @@
   <div class="issues">
     <% if @issues.any? %>
       <% @issues.each do |issue| %>
-        <div class="issue <%= "tied_issue" if issue.tied?(@room) %>">
-          <% if issue.point && issue.point != "" %>
-            <div class="issue_point"><%= issue.point %></div>
-          <% end %>
-          <p class="issue_name"><%= issue.name %></p>
-          <span class="issue_about"><%= issue.about %></span>
-          <% if issue.tied?(@room) %>
-            <%= link_to "編集", edit_issue_path(issue.id), class: "issue_menu edit_issue" %>
-            <%= link_to "部屋から削除", room_issues_destroy_path(room_id: @room.id, issue_id: issue.id), method: :post, class: "issue_menu delete_issue" %>
-          <% else %>
-            <%= link_to "編集", edit_issue_path(issue.id), class: "issue_menu edit_issue" %>
-            <%= link_to "追加", room_issues_create_path(room_id: @room.id, issue_id: issue.id), method: :post, class: "issue_menu add_issue" %>
-          <% end %>
+        <div id="issue_<%= issue.id %>">
+          <%= render partial: 'room_issues/issue', locals: { room: @room, issue: issue } %>
         </div>
       <% end %>
     <% else %>

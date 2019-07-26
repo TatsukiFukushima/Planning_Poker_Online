@@ -1,0 +1,1 @@
+$('#issue_<%= @issue.id %>').html("<%= j(render partial: 'room_issues/issue', locals: {room: @room, issue: @issue}) %>");

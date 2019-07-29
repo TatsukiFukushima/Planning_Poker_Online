@@ -17,7 +17,7 @@ gem 'kaminari-bootstrap', '~> 3.0.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: :development
 # herokuのやつ
-gem 'pg', group: :production
+gem 'pg', '~> 0.19.0', group: :production
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets

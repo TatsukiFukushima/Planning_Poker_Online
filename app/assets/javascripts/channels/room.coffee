@@ -30,7 +30,7 @@ document.addEventListener 'turbolinks:load', ->
 
       speak: (message) ->
         @perform 'speak', message: message
-        $('div.room_message_box').animate({scrollTop: messages_height()});
+        $('div.room_message_box').animate({scrollTop: messages_height()}, 500);
 
       $(".card").click (event) ->
         App.room.speak '<img src="/assets/background_card_' + $(this).attr("value") + '">'

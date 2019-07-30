@@ -1,10 +1,33 @@
-<div class="center jumbotron">
-  <h1>PPO -Planning Poker Online-</h1>
+<div class="home_wrapper">
+  <div class="home_top center jumbotron">
+    <h1 class="home_title_h1">Planning Poker Online</h1>
 
-  <h2>
-    ご新規さんかい？<br>
-    それならまずはアカウントを作成してくれ。
-  </h2>
+    <h2 class="home_about_1">
+      世界のエンジニアに、見積もりと驚きを。
+    </h2>
+    <div class="home_top_img">
+      <%= image_tag("home_top_img.png") %>
+    </div>
+  </div>
+  <div class="home_container_2 center jumbotron">
+    <h2 class="home_about_2">
+      アジャイル開発のパワーを、もっと先へ。
+    </h2>
+    <div class="home_p_container">
+      <p>Planning Poker Onlineは、エンジニアの業務に革命的な変化をもたらす戦略トレーディングカードゲームです。<br>
+        数字の書かれたカードを使ってタスクを見積もるだけで、全員が納得できる見積もりを出すことができます。</p>
+    </div>
+    <div class="home_card_img">
+      <%= image_tag("background_card_1.png") %>
+      <%= image_tag("background_card_2.png") %>
+      <%= image_tag("background_card_3.png") %>
+    </div>
+  </div>
+  <div class="home_container_3 center jumbotron">
+    <h2 class="home_about_3">
+      さあ、はじめよう。
+    </h2>
 
-  <%= link_to "新規登録", signup_path, class: "btn btn-lg btn-primary" %>
+    <%= link_to "はじめる", signup_path, class: "btn btn-lg btn-primary btn-new-user" %>
+  </div>
 </div>

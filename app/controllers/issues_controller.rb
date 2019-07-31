@@ -1,16 +1,20 @@
 class IssuesController < ApplicationController
+  before_action :set_return_url, only: %w[edit show]
+
   def index
     @issues = Kaminari.paginate_array(Issue.all.order(created_at: :desc)).page(params[:page]).per(5)
     session.delete(:forwarding_url) if session[:forwarding_url]
   end
 
   def new
-    set_return_url
     @issue = Issue.new
   end
 
+  def show
+    @issue = Issue.find(params[:id])
+  end
+
   def edit
-    set_return_url
     @issue = Issue.find(params[:id])
   end
 
@@ -42,7 +46,6 @@ class IssuesController < ApplicationController
   end
 
   def import
-    set_return_url
     @issue = Issue.new
   end
 

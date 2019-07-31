@@ -2,7 +2,7 @@
   <% if issue.point && issue.point != "" %>
     <div class="issue_point"><%= issue.point %></div>
   <% end %>
-  <p class="issue_name"><%= issue.name %></p>
+  <p class="issue_name"><%= link_to issue.name, issue %></p>
   <div class="issue_about_wrapper">
     <span class="issue_about"><%= issue.about %></span>
   </div>

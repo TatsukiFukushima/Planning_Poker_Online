@@ -10,10 +10,11 @@
   <div class="col-md-6 col-md-offset-3">
     <%= form_tag(issues_import_path, method: :post) do %>
 
-      <%= label_tag "リポジトリ名 (例: hoge/huga)" %>
+      <%= label_tag "リポジトリ名 (例: hoge/fuga)" %>
       <%= text_field_tag :repo, '', class: "form-control" %>
 
       <%= submit_tag "登録", class: "btn btn-primary" %>
     <% end %>
+    <p>※注意 既に登録されているものと全く同じ名前のissueは登録されないぞ</p>
   </div>
 </div>

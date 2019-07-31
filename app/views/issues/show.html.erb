@@ -1,0 +1,19 @@
+<% provide(:title, @issue.name) %>
+<div class="row">
+  <div class="return">
+    <%= link_to @return_url do %>
+      <i class="fab fa-youtube fa-4x fa-flip-horizontal"></i>
+    <% end %>
+  </div>
+  <h1><%= @issue.name %></h1>
+  <div class="issue_show_container">
+    <% if @issue.point && @issue.point != "" %>
+      <div class="issue_point"><%= @issue.point %></div>
+    <% end %>
+    <%= @issue.about == "" ? "このissueには説明文が無いみたいだな" : @issue.about %>
+    <div class="issue_menu_wrapper">
+      <%= link_to "削除", @issue, method: :delete, class: "issue_menu delete_issue", data: {confirm: "Issue を削除するぞ。"} %>
+      <%= link_to "編集", edit_issue_path(@issue.id), class: "issue_menu edit_issue" %>
+    </div>
+  </div>
+</div>

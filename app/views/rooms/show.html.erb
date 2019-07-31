@@ -10,9 +10,14 @@
       <p class="room_title"><%= @room.name %></p>
       <p class="room_about"><%= @room.about %></p>
       <div class="room_issues">
-        <p class="room_issues_top">Issue一覧</p>
+        <p class="room_issues_top">Issue一覧 (<%= @room.issues.count %>)</p>
         <%= link_to "編集", "/rooms/#{@room.id}/room_issues/edit" %>
         <div class="room_issues_wrapper">
+          <% if @room.issues.count == 0 %>
+            <div class="room_issue_record">
+              <p>まだissueは登録されてないぞ</p>
+            </div>
+          <% end %>
           <% @room.issues.order(created_at: :desc).each do |issue| %>
             <div class="room_issue_record">
               <% if issue.point && issue.point != "" %>

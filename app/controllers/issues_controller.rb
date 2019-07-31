@@ -50,10 +50,12 @@ class IssuesController < ApplicationController
     client = Octokit::Client.new access_token: ENV['ACCESS_TOKEN']
     begin
       issues = client.issues(params[:repo])
+      exist_new_issue = false
       issues.each do |issue|
-        Issue.create(name: issue.title, about: issue.body)
+        new_issue = Issue.new(name: issue.title, about: issue.body)
+        exist_new_issue = true if new_issue.save
       end
-      flash[:success] = "issueを作成したぞ"
+      exist_new_issue ? flash[:success] = "新しいissueをgithubから登録したぞ" : flash[:danger] = "新しく登録できるissueが無いみたいだな"
       redirect_to issues_url
     rescue
       flash[:danger] = "リポジトリ名が間違ってるみたいだぞ"

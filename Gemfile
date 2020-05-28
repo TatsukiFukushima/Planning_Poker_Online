@@ -11,7 +11,7 @@ gem 'rails', '~> 5.1.4'
 gem 'bcrypt', '3.1.12'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'bootstrap-sass', '3.3.7'
-gem 'kaminari', '~> 0.17.0'
+gem 'kaminari', '~> 1.2.1'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: [:development, :test]
